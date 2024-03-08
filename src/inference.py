@@ -6,7 +6,7 @@ import configs
 model ='xgb'
 
 def predict(model):
-    test   = pd.read_csv(configs.TEST_SET).values
+    test   = pd.read_csv(configs.TEST_ENG).values
     sample = pd.read_csv(configs.SAMPLE_FILE)
     targets = ["Pastry", "Z_Scratch", "K_Scatch", 
                "Stains", "Dirtiness", "Bumps", "Other_Faults"]

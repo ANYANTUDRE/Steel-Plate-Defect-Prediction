@@ -12,10 +12,17 @@ models = {
     #"extra": ensemble.ExtraTreesClassifier(), # nope, pas mieux que les autres gbdt
 
     "xgb": xgb.XGBClassifier(n_jobs=-1, 
-                             #eta=0.01, 
-                             #gamma=0.5, 
-                             #max_depth=7
-                             ),            # plutot pas mal
+                             #n_estimators= 785,
+                             tree_method='hist',
+                             eta=0.06, 
+                             #gamma=1, 
+                             max_depth=5
+                             ),    
+    "xgb_tuned":    xgb.XGBClassifier(** {'grow_policy': 'lossguide', 'n_estimators': 343, 
+                                          'learning_rate': 0.2953847324956156, 'gamma': 0.4810942725965306, 
+                                          'subsample': 0.4741272004639706, 'colsample_bytree': 0.7033101340924858, 'max_depth': 7, 
+                                          'min_child_weight': 5, 'reg_lambda': 2.8437928571268845e-07, 'reg_alpha': 30.216149925077563})    ,
+    
     "lgbm": lgbm.LGBMClassifier(n_jobs=-1),
     'gbm': ensemble.GradientBoostingClassifier(),
     #'cat': catboost.CatBoostClassifier(verbose=False),

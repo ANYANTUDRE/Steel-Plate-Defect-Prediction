@@ -5,3 +5,5 @@ SAMPLE_FILE = "../input/sample_submission.csv"
 TRAIN_FOLDS = "../input/train_folds.csv"
 
 MODEL_OUTPUT  = "../models/"
+TRAIN_ENG    = "../input/train_engineered.csv"
+TEST_ENG     = "../input/test_engineered.csv"

@@ -17,6 +17,8 @@ if __name__ == "__main__":
     # fetch the 7 targets
     y = train[targets]
 
+    
+
     mskf = MultilabelStratifiedKFold(n_splits=5, shuffle=True, random_state=2024)
 
     for fold, (train_idx, val_idx) in enumerate(mskf.split(train, y)):
